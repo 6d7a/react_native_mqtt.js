@@ -24,15 +24,13 @@
 	"main": "mqtt.js",
 	"types": "types/index.d.ts",
 	"scripts": {
-		"test": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly --",
+		"test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly --",
 		"tslint": "if [[ \"`node -v`\" != \"v4.3.2\" ]]; then tslint types/**/*.d.ts; fi",
 		"typescript-compile-test": "tsc -p test/typescript/tsconfig.json",
 		"typescript-compile-execute": "node test/typescript/*.js",
 		"typescript-test": "npm run typescript-compile-test && npm run typescript-compile-execute",
 		"prepare": "npm run browser-build",
 		"browser-build": "rimraf dist/ && mkdirp dist/ && browserify mqtt.js -s mqtt > dist/mqtt.js && uglifyjs < dist/mqtt.js > dist/mqtt.min.js",
-		"browser-test": "zuul --server test/browser/server.js --local --open test/browser/test.js",
-		"sauce-test": "zuul --server test/browser/server.js --tunnel ngrok -- test/browser/test.js",
 		"ci": "npm run tslint && npm run typescript-compile-test && npm run test && codecov"
 	},
 	"pre-commit": [
@@ -70,7 +68,7 @@
 		"end-of-stream": "^1.4.1",
 		"es6-map": "^0.1.5",
 		"events": "^3.0.0",
-		"help-me": "^1.0.1",
+		"help-me": "^4.0.1",
 		"inherits": "^2.0.3",
 		"minimist": "^1.2.0",
 		"pump": "^3.0.0",
@@ -89,7 +87,7 @@
 		"global": "^4.3.2",
 		"istanbul": "^0.4.5",
 		"mkdirp": "^0.5.1",
-		"mocha": "^4.1.0",
+		"mocha": "^10.0.0",
 		"mqtt-connection": "^4.0.0",
 		"pre-commit": "^1.2.2",
 		"rimraf": "^2.6.2",
@@ -99,9 +97,7 @@
 		"tslint": "^5.11.0",
 		"tslint-config-standard": "^8.0.1",
 		"typescript": "^3.2.2",
-		"uglify-js": "^3.4.5",
-		"zuul": "^3.12.0",
-		"zuul-ngrok": "^4.0.0"
+		"uglify-js": "^3.4.5"
 	},
 	"homepage": "https://github.com/mqttjs/MQTT.js",
 	"standard": {
