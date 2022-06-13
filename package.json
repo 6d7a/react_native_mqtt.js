@@ -1,5 +1,5 @@
 {
-	"name": "@taoqf/react-native-mqtt",
+	"name": "@consider-it/react-native-mqtt",
 	"description": "A library for the MQTT protocol",
 	"version": "3.0.4",
 	"contributors": [
@@ -16,10 +16,13 @@
 		"react",
 		"react-native"
 	],
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/taoqf/MQTT.js/tree/react-native"
+		"url": "https://github.com/consider-it/V2X-React_Native_MQTT.js/tree/react-native"
 	},
 	"main": "mqtt.js",
 	"types": "types/index.d.ts",
@@ -75,6 +78,7 @@
 		"reinterval": "^1.1.0",
 		"safe-buffer": "^5.1.2",
 		"stream": "^0.0.2",
+		"stream-shift": "^1.0.1",
 		"url": "^0.11.0",
 		"util": "^0.12.0",
 		"ws": "^7.0.0",
